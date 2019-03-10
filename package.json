@@ -1,0 +1,19 @@
+{
+  "name": "cruise-ships",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dede79/cruise-ships.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dede79/cruise-ships/issues"
+  },
+  "homepage": "https://github.com/dede79/cruise-ships#readme"
+}
