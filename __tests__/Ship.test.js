@@ -5,61 +5,60 @@ const Itinerary = require('../src/Itinerary.js');
 
 
 describe('Ship', () => {
-    it('can be instantiated', () => {
-        const port = new Port('Dover');
-        const itinerary = new Itinerary([port]);
-        const ship = new Ship(itinerary);
+    describe('with ports and an itinerary', () => {
 
-        expect(ship).toBeInstanceOf(Object);
-    
-    });
-
-    it('has a starting port', () => {
-        // note for myself: below is called dependency inversion - on object can depent on other objects
-        // but it shouldn't know what they are.
-        const dover = new Port('Dover');
-        const itinerary = new Itinerary([dover]);
-        const ship = new Ship(itinerary);
-
-        expect(ship.currentPort).toBe(dover);
-
-    });
-
-    it('can set sail', () => {
-        const dover = new Port('Dover');
-        const calais = new Port('Calais');
-        const itinerary = new Itinerary([dover, calais]);
-        const ship = new Ship(itinerary);
+        let ship;
+        let dover;
+        let calais;
+        let itinerary;
       
-        ship.setSail();
+        beforeEach(() => {
       
-        expect(ship.currentPort).toBeFalsy();
-        expect(dover.ships).not.toContain(ship);
+          dover = new Port('Dover');
+          calais = new Port('Calais');
+          itinerary = new Itinerary([dover, calais]);
+          ship = new Ship(itinerary);
       
-      });
+        });
 
-    it('can port at a different port', () => {
-        const dover = new Port('Dover');
-        const calais = new Port('Calais');
-        const itinerary = new Itinerary([dover, calais]);
-        const ship = new Ship(itinerary);
+        it('can be instantiated', () => {
 
-        ship.setSail();
-        ship.dock();
-      
-        expect(ship.currentPort).toBe(calais);
-        expect(calais.ships).toContain(ship);
-      
-    });
+            expect(ship).toBeInstanceOf(Object);
+        
+        });
 
-    it('gets added to port on instantiation', () => {
-        const dover = new Port('Dover');
-        const itinerary = new Itinerary([dover]);
-        const ship = new Ship(itinerary);
-      
-        expect(dover.ships).toContain(ship);
-      
+        it('has a starting port', () => {
+            // note for myself: below is called dependency inversion - on object can depent on other objects
+
+            expect(ship.currentPort).toBe(dover);
+
+        });
+
+        it('can set sail', () => {
+        
+            ship.setSail();
+        
+            expect(ship.currentPort).toBeFalsy();
+            expect(dover.ships).not.toContain(ship);
+        
+        });
+
+        it('can port at a different port', () => {
+
+            ship.setSail();
+            ship.dock();
+        
+            expect(ship.currentPort).toBe(calais);
+            expect(calais.ships).toContain(ship);
+        
+        });
+
+        it('gets added to port on instantiation', () => {
+        
+            expect(dover.ships).toContain(ship);
+        
+        });
+
     });
 
 });
-

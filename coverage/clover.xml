@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1552471196704" clover="3.2.0">
-  <project timestamp="1552471196705" name="All files">
+<coverage generated="1552494477785" clover="3.2.0">
+  <project timestamp="1552494477786" name="All files">
     <metrics statements="25" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7" elements="32" coveredelements="32" complexity="0" loc="25" ncloc="25" packages="1" files="3" classes="3"/>
     <file name="Itinerary.js" path="/Users/appleair/Desktop/Projects/cruise-ships/src/Itinerary.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -9,8 +9,8 @@
     </file>
     <file name="Port.js" path="/Users/appleair/Desktop/Projects/cruise-ships/src/Port.js">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-      <line num="2" count="11" type="stmt"/>
-      <line num="3" count="11" type="stmt"/>
+      <line num="2" count="15" type="stmt"/>
+      <line num="3" count="15" type="stmt"/>
       <line num="6" count="2" type="stmt"/>
       <line num="7" count="9" type="stmt"/>
       <line num="10" count="2" type="stmt"/>
