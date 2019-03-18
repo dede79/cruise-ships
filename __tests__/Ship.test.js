@@ -69,7 +69,6 @@ describe('Ship', () => {
         
             expect(ship.currentPort).toBe(calais);
             expect(calais.addShip).toHaveBeenCalledWith(ship);
-            
         
         });
 
